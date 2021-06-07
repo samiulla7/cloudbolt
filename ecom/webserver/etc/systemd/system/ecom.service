@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI instance to serve Ecom project
+After=network.target
+
+[Service]
+Type=forking
+User=ec2-user
+WorkingDirectory=/home/ec2-user/gnm/
+Environment="PATH=/home/ec2-user/gnm/env/bin"
+ExecStart=/home/ec2-user/gnm/env/bin/uwsgi --ini /home/ecom/logs/ecom-uwsgi.ini
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

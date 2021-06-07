@@ -1,0 +1,74 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en" ng-app="ecom">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Ecom</title>
+  <!-- STYLES -->
+  <!-- build:css lib/css/main.min.css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bower_components/rdash-ui/dist/css/rdash.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+  <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+  <!-- build:js lib/js/main.min.js -->
+  <script type="text/javascript" src="{% static 'bower_components/angular/angular.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bower_components/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+  <!-- Angular Material Library -->
+  <script src="{% static 'bower_components/angular-material/angular-material.min.js' %}"></script>
+  <script src="{% static 'bower_components/angular-aria/angular-aria.min.js' %}"></script>
+  <script src="{% static 'bower_components/angular-animate/angular-animate.min.js' %}"></script>
+  <script src="{% static 'bower_components/angular-messages/angular-messages.min.js' %}"></script>
+  <script src="{% static 'bower_components/angular-resource/angular-resource.js' %}"></script>
+  <script src="{% static 'bower_components/ngstorage/ngStorage.min.js' %}"></script>
+  <script src="{% static 'bower_components/angular-route/angular-route.min.js' %}"></script>
+  <!-- endbuild -->
+  <!-- Custom Scripts -->
+</head>
+<body>
+    <!-- UI view -->
+    <div ui-view name="root" class="body-class"></div>
+    <!-- CSRF -->
+    <input type="hidden" value="{{csrf_token}}" id="csrf_toekn">
+
+    <script src="{% static 'index.module.js' %}"></script>
+    <script src="{% static 'index.route.js' %}"></script>
+    <script src="{% static 'index.config.js' %}"></script>
+    <script src="{% static 'index.constants.js' %}"></script>
+    <script src="{% static 'index.run.js' %}"></script>
+    <script src="{% static 'services/auth.service.js' %}"></script>
+    <script src="{% static 'services/api.service.js' %}"></script>
+    <script src="{% static 'services/file_upload.service.js' %}"></script>
+    <!-- Main Abstract Controller -->
+    <script src="{% static 'controllers/main_abstract/main_abstract.controller.js' %}"></script>
+    <!-- Header directive -->
+    <script src="{% static 'directives/header/header.directive.js' %}"></script>
+    <!-- Sidenavbar directive -->
+    <script src="{% static 'directives/sidenavbar/sidenavbar.directive.js' %}"></script>
+    <!-- Home Controller -->
+    <script src="{% static 'controllers/home/home.controller.js' %}"></script>
+    <!-- Login Controller -->
+    <script src="{% static 'controllers/login/login.controller.js' %}"></script>
+    <!-- Register Controller -->
+    <script src="{% static 'controllers/register/register.controller.js' %}"></script>
+    <!-- Add Update Product Controller -->
+    <script src="{% static 'controllers/add_update_product/add_update_product.controller.js' %}"></script>
+    <!-- Upload Product Picture Controller -->
+    <script src="{% static 'controllers/upload_picture/upload_picture.controller.js' %}"></script>
+    <!-- View product Controller -->
+    <script src="{% static 'controllers/view_details/view_details.controller.js' %}"></script>
+
+    <script src="{% static 'directives/loading.js' %}"></script>
+    <script src="{% static 'directives/widget-body.js' %}"></script>
+    <script src="{% static 'directives/widget-footer.js' %}"></script>
+    <script src="{% static 'directives/widget-header.js' %}"></script>
+    <script src="{% static 'directives/widget.js' %}"></script>
+    <script src="{% static 'directives/file_upload.directive.js' %}"></script>
+</body>
+</html>

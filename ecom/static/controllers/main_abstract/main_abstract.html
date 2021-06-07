@@ -1,0 +1,21 @@
+<!-- <div class="body-content-ring">
+    <div ui-view name="eHeader" class="main-header-content">
+        <e-header></e-header>
+    </div>
+    <div ui-view name="eBody" class="main-body-content"></div>
+    <div ui-view name="eFooter" class="main-footer-content">
+        <e-footer></e-footer>
+    </div>
+</div> -->
+<div ng-controller="EMainAbstractController">
+    <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+        <div ui-view name="eSidenav"></div>
+        <div id="content-wrapper">
+            <div class="page-content">
+                <div ui-view name="eHeader"></div>
+                <!-- Main Content -->
+                <div ui-view name="eBody"></div>
+            </div><!-- End Page Content -->
+        </div><!-- End Content Wrapper -->
+    </div>
+</div>

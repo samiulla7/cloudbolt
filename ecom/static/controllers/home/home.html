@@ -1,0 +1,96 @@
+<style>
+    .widget .widget-body.medium {
+        height: auto !important;
+        overflow: hidden !important;
+    }
+</style>
+<div class="row alerts-container" >
+    <div class="col-xs-12">
+      <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-lg-3 col-md-6 col-xs-12" ng-show="EHomeCtrl.is_admin">
+        <div class="title"><button type="button" class="btn btn-primary" ng-click="EHomeCtrl.create_product()">Add Product</button></div>
+      </div>
+  </div>
+  
+  <div class="row" ng-show="EHomeCtrl.is_admin">
+      <div class="col-lg-12">
+          <rd-widget >
+              <rd-widget-header icon="fa-users" title="Users">
+                  <input type="text" placeholder="Search" class="form-control input-sm" />
+              </rd-widget-header>
+              <rd-widget-body classes="medium no-padding">
+                    <rd-loading ng-show="!EHomeCtrl.is_data_loaded"></rd-loading>
+                    <div class="table-responsive" ng-show="EHomeCtrl.is_data_loaded">
+                        <table class="table">
+                            <thead>
+                                <tr><th class="text-center">ID</th><th>Name</th><th>Description</th><th>Category</th><th>Image</th><th>Action</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="p in EHomeCtrl.product_list">
+                                    {{p}}
+                                    <td class="text-center"><span>{{ $index+1 }}</span></td>
+                                    <td ><span>{{p.product_name}}</span></td>
+                                    <td ><span>{{p.product_description}}</span></td>
+                                    <td ><span>{{p.category}}</span></td>
+                                    <td ><img src="{{p.picture}}" height="50px" weight="50px" alt="Image"></td>
+                                    <!-- <td ><img src="http://localhost:8000{{p.picture}}" alt="Example" width="96" height="65"></td> -->
+                                    <td><button type="button" class="btn btn-primary" ng-click="EHomeCtrl.update_product(p.id)">Edit</button>
+                                        <button type="button" class="btn btn-primary" 
+                                            ng-click="EHomeCtrl.upload_picture(p.id)">Upload Picture</button>
+                                        <button type="button" class="btn btn-sm btn-danger" 
+                                        ng-click="EHomeCtrl.delete_product(p.id)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+              </rd-widget-body>
+          <rd-widget>
+      </div>
+  </div>
+  <div class="row" ng-show="!EHomeCtrl.is_admin">
+	<div class="col-lg-3 col-md-6 col-xs-12" ng-repeat="p in EHomeCtrl.product_list">
+		<rd-widget class="text-center">
+			<rd-widget-body>
+                <img src="{{p.picture}}" height="200px"/>
+				<div class="title">{{p.product_name}}</div>
+                <div class="comment">Category : {{p.category}}</div>
+                <div class="comment">Rs. {{p.unit_price}}</div>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="EHomeCtrl.view_details(p.id)">View Details</button>
+			</rd-widget-body>
+		</rd-widget>
+    </div>
+  </div>
+  
+  <!-- <div class="row">
+      <div class="col-lg-6">
+             <rd-widget>
+                 <rd-widget-header icon="fa-plus" title="Extras">
+                     <button class="btn btn-sm btn-info">Button</button>
+                 </rd-widget-header>
+                 <rd-widget-body>
+                  <div class="message">
+                      This is a standard message which will also work the ".no-padding" class, I can also <span class="error">be an error message!</span>
+                  </div>
+                  <hr />
+                  <div class="message">
+                      <a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> is included, so you can use <a href="#" tooltip="I'm a tooltip!">tooltips</a> and all of the other native Bootstrap JS components!
+                  </div>
+                 </rd-widget-body>
+             </rd-widget>
+      </div>
+      <div class="col-lg-6" ng-show="EHomeCtrl.is_admin">
+          <rd-widget>
+              <rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
+                  <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a>
+              </rd-widget-header>
+              <rd-widget-body>
+                  <rd-loading></rd-loading>
+              </rd-widget-body>
+          </rd-widget>
+      </div>
+  </div> -->

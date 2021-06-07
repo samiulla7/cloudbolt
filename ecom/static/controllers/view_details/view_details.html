@@ -1,0 +1,28 @@
+<style>
+    .widget .widget-body.medium {
+        height: auto !important;
+        overflow: hidden !important;
+    }
+</style>
+<div class="row alerts-container" >
+  <div class="row" >
+	<div class="col-lg-12 col-md-12 col-xs-12" >
+		<rd-widget class="text-center">
+			<rd-widget-body>
+                <rd-loading ng-show="!Evdctrl.is_data_loaded"></rd-loading>
+                <div ng-show="Evdctrl.is_data_loaded">
+                    <img src="{{Evdctrl.product_details['picture']}}" height="200px"/>
+                    <div class="title">{{Evdctrl.product_details['product_name']}}</div>
+                    <div class="comment">Category : {{Evdctrl.product_details['category']}}</div>
+                    <div class="comment">Description : {{Evdctrl.product_details['product_description']}}</div>
+                    <div class="comment">Quantity per unit : {{Evdctrl.product_details['quantity_per_unit']}}</div>
+                    <div class="comment">Price Rs. {{Evdctrl.product_details['unit_price']}}/-</div>
+                    <div class="comment">Color : {{Evdctrl.product_details['color']}}</div>
+                    <div class="comment">Size  : {{Evdctrl.product_details['size']}}</div>
+                    <button type="button" class="btn btn-primary" ng-click="Evdctrl.back()">Back</button>
+                </div>
+			</rd-widget-body>
+		</rd-widget>
+    </div>
+  </div>
+  

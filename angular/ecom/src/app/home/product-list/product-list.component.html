@@ -1,0 +1,79 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Product List</h4>
+            <!-- <p class="category">Here is a subtitle for this table</p> -->
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of productList; let i = index">
+                  <td class="text-center">
+                    <span>{{ i + 1 }}</span>
+                  </td>
+                  <td>
+                    <span>{{ p.product_name }}</span>
+                  </td>
+                  <td>
+                    <span>{{ p.product_description }}</span>
+                  </td>
+                  <td>
+                    <span>{{ p.category }}</span>
+                  </td>
+                  <td>
+                    <img
+                      src="{{ domain }}{{ p.picture }}"
+                      height="50px"
+                      weight="50px"
+                      alt="Image"
+                    />
+                  </td>
+                  <!-- <td ><img src="http://localhost:8000{{p.picture}}" alt="Example" width="96" height="65"></td> -->
+                  <td>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-fill"
+                      style="margin:4px;"
+                      [routerLink]="['product/update', p.id]"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-fill"
+                      style="margin:4px;"
+                      (click)="uploadPicture(p.id)"
+                    >
+                      Upload Picture
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-fill"
+                      style="margin:4px;"
+                      (click)="delete(p.id)"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

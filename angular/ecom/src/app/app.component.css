@@ -1,0 +1,3 @@
+.sidebar[data-color="red"]:after {
+  background: linear-gradient(to bottom, #91fb40 0%, #0232bb52 100%);
+}

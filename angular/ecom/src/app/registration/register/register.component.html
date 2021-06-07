@@ -1,0 +1,167 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="card">
+          <div class="header">
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="title">Register</h4>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <form [formGroup]="registerFormGroup">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      value=""
+                      formControlName="username"
+                    />
+                    <div
+                      *ngIf="
+                        registerFormGroup.get('username').invalid &&
+                        (registerFormGroup.get('username').dirty ||
+                          registerFormGroup.get('username').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('username').errors.required
+                        "
+                      >
+                        username is required.
+                      </div>
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('username').errors.maxlength
+                        "
+                      >
+                        username cannot be more than 20 characters long.
+                      </div>
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('username').errors.minlength
+                        "
+                      >
+                        username must be at least 8 characters long.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>First name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First name"
+                      value=""
+                      formControlName="first_name"
+                    />
+                    <div
+                      *ngIf="
+                        registerFormGroup.get('first_name').invalid &&
+                        (registerFormGroup.get('first_name').dirty ||
+                          registerFormGroup.get('first_name').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('first_name').errors.required
+                        "
+                      >
+                        First name is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Last name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last name"
+                      value=""
+                      formControlName="last_name"
+                    />
+                    <div
+                      *ngIf="
+                        registerFormGroup.get('last_name').invalid &&
+                        (registerFormGroup.get('last_name').dirty ||
+                          registerFormGroup.get('last_name').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('last_name').errors.required
+                        "
+                      >
+                        Last name is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Password"
+                      value=""
+                      formControlName="password"
+                    />
+                    <div
+                      *ngIf="
+                        registerFormGroup.get('password').invalid &&
+                        (registerFormGroup.get('password').dirty ||
+                          registerFormGroup.get('password').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          registerFormGroup.get('password').errors.required
+                        "
+                      >
+                        password is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                [disabled]="registerFormGroup.invalid"
+                (click)="register()"
+                class="btn btn-info btn-fill pull-right"
+              >
+                Register
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+</style>
+<div class="col-md-6 col-md-offset-3">
+    <h2 ng-show="!eAECtrl.is_add_form">Update</h2>
+    <h2 ng-show="eAECtrl.is_add_form">Add</h2>
+    <form name="au_form" ng-submit="eAECtrl.submit_data(au_form.$valid)" role="form">
+        <div class="form-group">
+            <label for="username">Product name</label>
+            <input type="text" name="product_name" id="product_name" class="form-control" ng-model="eAECtrl.product_name" required />
+            <span style="color:red" ng-cloak ng-show="(au_form.product_name.$dirty && au_form.product_name.$invalid)">
+                    <span ng-show="au_form.product_name.$error.required">Product name is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username">Product Description</label>
+            <input type="text" name="product_description" id="Text1" class="form-control" ng-model="eAECtrl.product_description" required />
+            <span style="color:red" ng-cloak ng-show="(au_form.product_description.$dirty && au_form.product_description.$invalid)">
+                <span ng-show="au_form.product_description.$error.required">Product description is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username">Category</label>
+            <input type="text" name="category" id="category" class="form-control" ng-model="eAECtrl.category" required />
+            <span style="color:red" ng-cloak ng-show="(au_form.category.$dirty && au_form.category.$invalid)">
+                    <span ng-show="au_form.category.$error.required">Category is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username">Quantity Per Unit </label>
+            <input type="text" name="quantity_per_unit" id="quantity_per_unit" class="form-control" ng-model="eAECtrl.quantity_per_unit" required />
+            <span style="color:red" ng-cloak ng-show="(au_form.quantity_per_unit.$dirty && au_form.quantity_per_unit.$invalid)">
+                <span ng-show="au_form.quantity_per_unit.$error.required">This field is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username">Price</label>
+            <input type="number" name="unit_price" id="unit_price" class="form-control" ng-model="eAECtrl.unit_price" required />
+            <span style="color:red" ng-cloak ng-show="(au_form.unit_price.$dirty && au_form.unit_price.$invalid)">
+                    <span ng-show="au_form.unit_price.$error.required">Product price is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="username">Color</label>
+            <input type="text" name="color" id="color" class="form-control" ng-model="eAECtrl.color" />
+            
+        </div>
+        <div class="form-group">
+            <label for="username">Size</label>
+            <input type="text" name="size" id="size" class="form-control" ng-model="eAECtrl.size" />
+           
+        </div>
+
+        <div>
+            <span class="login-error-msg">{{ eAECtrl.error }}</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-show="eAECtrl.is_add_form">Add</button>
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-show="!eAECtrl.is_add_form">Update</button>
+        </div>
+    </form>
+</div>
+

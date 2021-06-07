@@ -1,0 +1,21 @@
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+</style>
+<div class="col-md-6 col-md-offset-3">
+    <h2 >Upoad product image</h2>
+    <form name="au_form" ng-submit="Eupctrl.submit_data()" role="form">
+        <div class="form-group">
+            <label for="username">Product Image</label>
+            <input type="file" name="picture" id="picture" class="form-control" ng-model="Eupctrl.picture" required file-model="Eupctrl.picture"/>
+            <span style="color:red" ng-cloak ng-show="(au_form.picture.$dirty && au_form.picture.$invalid)">
+                    <span ng-show="au_form.picture.$error.required">Product Picture is required.</span>
+            </span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+</div>
+

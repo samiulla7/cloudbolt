@@ -1,0 +1,81 @@
+.newuplyf-md-toolbar{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 9px 0 rgba(0,0,0,.14), 0 3px 9px 0 rgba(0,0,0,.12);
+}
+.newuplyf-header-green{
+    background: #00a986;
+}
+.newuplyf-header-white{
+    background: #fff;
+}
+.newuplyf-header-green .newuplyf-header p i{
+    font-size: 11px;
+    position: relative;
+    top: 2px;
+    right: 5px;
+}
+.newuplyf-header-green p{
+    font-size: 14px;
+    line-height: 30px;
+
+    padding: 0px;
+}
+.newuplyf-header-green .header-beta-text{
+    margin: 0px 0px 0px 34px;
+}
+.profile-avatar img{
+    border-radius: 50%;
+}
+.newuplyf-header .uplyf-register-profile, .uplyf-register-profile:not([disabled]):hover{
+    padding:0px 0px;
+    border-radius: 50%;
+}
+.h-tabs{
+    color: #00a986;
+    margin: 0;
+    font-size: 14px;
+}
+/* to set the header always 0 padding by naresh */
+.newuplyf-header-green .newuplyf-header{
+    padding: 0px 0px !important;
+    position: relative;
+}
+.newuplyf-md-toolbar .logo-title{
+    color: #004fa2;
+    font-size: 10px;
+    padding-bottom: 1px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.newuplyf-md-toolbar .uplyf-logo{
+    padding: 2px 0px 2px 0px;
+}
+.newuplyf-header .newuplyf-header-paragraph{
+    position: absolute;
+    right: 0px;
+    top: -1px;
+}
+.newuplyf-header-white .newuplyf-header .bell-icon i{
+  font-size: 20px;
+  color: #4ca987;
+}
+@media (max-width:600px){
+    .blocked-timer-div_timershow{
+        display: none;
+    }
+}
+@media (max-width:500px){
+    .uplyf-button-register-responsive{
+        padding: 0px;
+        margin: 0px 5px;
+        min-width: auto;
+        font-size: 12px;
+    }
+}
+@media (max-width:380px){
+    .uplyf-button-register-responsive{
+        margin: 0px 2px;
+    }
+}

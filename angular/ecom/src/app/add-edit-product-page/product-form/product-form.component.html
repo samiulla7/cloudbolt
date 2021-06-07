@@ -1,0 +1,217 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">{{ pageTitle }}</h4>
+          </div>
+          <div class="content">
+            <form [formGroup]="productFormGroup">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Product Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Product Name"
+                      formControlName="product_name"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('product_name').invalid &&
+                        (productFormGroup.get('product_name').dirty ||
+                          productFormGroup.get('product_name').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          productFormGroup.get('product_name').errors.required
+                        "
+                      >
+                        product name is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Product Description</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Product Description"
+                      formControlName="product_description"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('product_description').invalid &&
+                        (productFormGroup.get('product_description').dirty ||
+                          productFormGroup.get('product_description').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          productFormGroup.get('product_description').errors
+                            .required
+                        "
+                      >
+                        Product Description is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Quantity Per Unit</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Quantity Per Unit"
+                      formControlName="quantity_per_unit"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('quantity_per_unit').invalid &&
+                        (productFormGroup.get('quantity_per_unit').dirty ||
+                          productFormGroup.get('quantity_per_unit').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          productFormGroup.get('quantity_per_unit').errors
+                            .required
+                        "
+                      >
+                        Quantity Per Unit is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Price"
+                      formControlName="unit_price"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('unit_price').invalid &&
+                        (productFormGroup.get('unit_price').dirty ||
+                          productFormGroup.get('unit_price').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="
+                          productFormGroup.get('unit_price').errors.required
+                        "
+                      >
+                        Price is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Category</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Category"
+                      formControlName="category"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('category').invalid &&
+                        (productFormGroup.get('category').dirty ||
+                          productFormGroup.get('category').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="productFormGroup.get('category').errors.required"
+                      >
+                        Category is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Color</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Color"
+                      formControlName="color"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('color').invalid &&
+                        (productFormGroup.get('color').dirty ||
+                          productFormGroup.get('color').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div
+                        *ngIf="productFormGroup.get('color').errors.required"
+                      >
+                        Color is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Size</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Size"
+                      formControlName="size"
+                    />
+                    <div
+                      *ngIf="
+                        productFormGroup.get('size').invalid &&
+                        (productFormGroup.get('size').dirty ||
+                          productFormGroup.get('size').touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="productFormGroup.get('size').errors.required">
+                        Size is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                (click)="submit()"
+                class="btn btn-info btn-fill pull-right"
+                [disabled]="productFormGroup.invalid"
+              >
+                Submit
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

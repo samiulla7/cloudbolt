@@ -1,0 +1,44 @@
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+</style>
+<div class="col-md-6 col-md-offset-3">
+    <h2>Login</h2>
+    <form name="loginForm" ng-submit="eLoginCtrl.login(loginForm.$valid,loginForm)" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Username</label>
+            <input type="email"
+                class="form-control ng-pristine ng-scope ng-empty ng-valid-name ng-invalid ng-invalid-required ng-valid-pattern ng-touched"
+                name="username"
+                required ng-model="eLoginCtrl.username"
+                ng-pattern="/^.+@.+\..+$/"
+                placeholder="Email ID"
+                aria-label="Email"
+                ng-focus="eLoginCtrl.unameError = false"
+                aria-invalid="true">
+            <span style="color:red"  ng-cloak  ng-show="loginForm.username.$dirty && loginForm.username.$invalid">
+                <span ng-show="loginForm.username.$error.required">Username is required.</span>
+                <span ng-show="loginForm.username.$error.email">Invalid username address.</span>
+            </span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" ng-focus="eLoginCtrl.passError = false"
+            required ng-model="eLoginCtrl.password" 
+                placeholder="Password" ng-change="eLoginCtrl.error='';">
+            <span style="color:red" ng-cloak ng-show="(loginForm.password.$dirty && loginForm.password.$invalid)">
+                <span ng-show="loginForm.password.$error.required">Password is required.</span>
+            </span>
+        </div>
+        <div>
+            <span class="login-error-msg">{{ eLoginCtrl.error }}</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Login</button>
+            <!-- <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+            <a href="#/register" class="btn btn-link">Register</a>
+        </div>
+    </form>
+</div>
+

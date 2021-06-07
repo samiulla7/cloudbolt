@@ -1,0 +1,43 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" *ngIf="productDetails">
+        <div class="card card-user">
+          <div class="image"></div>
+          <div class="content">
+            <div class="author">
+              <img
+                class="avatar border-gray"
+                src="{{ domain }}{{ productDetails.picture }}"
+                alt="..."
+              />
+              <h4 class="title">{{ productDetails.product_name }}<br /></h4>
+              <p>
+                {{ productDetails.product_description }}<br />{{
+                  productDetails.category
+                }}
+              </p>
+            </div>
+            <p class="description text-center">
+              Quantity per unit : {{ productDetails.quntity_per_unit }} <br />
+              Unit Price : Rs. {{ productDetails.unit_price }} /- <br />
+              Color : {{ productDetails.color }} <br />
+              size : {{ productDetails.size }} <br />
+            </p>
+            <br />
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-primary btn-fill"
+                style="margin:4px;"
+                (click)="goTOHome()"
+              >
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

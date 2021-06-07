@@ -1,0 +1,1 @@
+PRODUCT_CATEGORY_LIST = ['Mobiles','Computers','Health','Books', 'Kitchen']

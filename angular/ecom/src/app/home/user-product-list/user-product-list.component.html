@@ -1,0 +1,39 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let p of productList; let i = index">
+        <div class="card card-user">
+          <div class="image"></div>
+          <div class="content">
+            <div class="author">
+              <a href="#">
+                <img
+                  class="avatar border-gray"
+                  src="{{ domain }}{{ p.picture }}"
+                  alt="..."
+                />
+
+                <h4 class="title">{{ p.product_name }}<br /></h4>
+              </a>
+            </div>
+            <p class="description text-center">
+              Quantity per unit : {{ p.quntity_per_unit }} <br />
+              Unit Price : Rs. {{ p.unit_price }} /- <br />
+            </p>
+            <br />
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-primary btn-fill"
+                style="margin:4px;"
+                [routerLink]="['product-details', p.id]"
+              >
+                More Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
